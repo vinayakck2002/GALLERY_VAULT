@@ -87,19 +87,14 @@ h1{
     margin-top: 67px;
     display: flex;
 }
-p{
-    background-color: blue;
-    /* padding-left: 19px; */
-    /* padding-top: 204px; */
-}
+
 
 .img-del{
   /* background-color: rgb(248, 10, 10); */
   display: grid;
-  gap: 10px;
-  grid-template-columns: auto auto auto;
-  padding: 2px;
-  /* box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px; */
+  gap: 2px;
+  grid-template-columns: auto auto auto auto;
+  padding: 10px;
 }
 .urdelete{
     background-color: #04AA6D;
@@ -117,9 +112,7 @@ p{
     font-family: sans-serif;
     text-transform: capitalize;
 }
-
-
-
+ 
 
 /* --------- imgadd.html -------- */
 

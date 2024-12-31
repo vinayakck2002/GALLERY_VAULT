@@ -8,7 +8,7 @@ def signin(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        print(username,password)
+        # print(username,password)
         # Check if both fields are provided
         if not username or not password:
             messages.error(request, "Both username and password are required!")
@@ -34,7 +34,7 @@ def usersignup(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         confirmpassword = request.POST.get('confirmpassword')
-        print(email,username,password,confirmpassword)
+        # print(email,username,password,confirmpassword)
         if password==confirmpassword:
             User.objects.create_user(username=username, email=email, password=password)
             return redirect("signin")
@@ -48,7 +48,7 @@ def viewsmain(request):
         # print(imgdef)  # You can remove this print statement after testing
         
         # Create and save a new ImgForm object with the uploaded image
-        obj = Gallery(classimages=imgdef)
+        obj = Gallery(classimages=imgdef,User=request.user)
         obj.save()
         return redirect(viewsmain)  # Redirect to the index view to refresh the page
 
@@ -68,6 +68,8 @@ def picture(request,id):
     imagefeeds=Gallery.objects.get(pk=id)
     feeds = imagefeeds.classimages.url
     return render(request,'images.html',{"feeds":feeds})
+
+
 
 
 

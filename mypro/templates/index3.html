@@ -19,13 +19,12 @@
 
     {% for i in feeds %}
     <div class="img-del">
+    <!-- <p> -->
     <a href="{% url 'pic' i.id %}">
     <img class="img" src="{{ i.classimages.url }}" alt="Image">
-    <p>
-
     <a class="urdelete" href="{% url 'urdelete' i.id %}">delete</a>
     </a>
-    </p>
+    <!-- </p> -->
     </div>
     
     {% endfor %}
