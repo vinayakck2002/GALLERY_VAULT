@@ -1,0 +1,144 @@
+body{
+    /* background-color: blue; */
+    margin: 0px;
+    padding: 0px;
+}
+
+nav{
+    background-color:#04AA6D;
+    display: flex;
+    float: left;
+    height: 69px;
+    width: 100%;
+    padding: 20px;
+    padding-right: 26px;
+   
+    
+}
+
+.nav-con{
+    /* background-color: darkblue; */
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    width: 96%;
+}
+.add-btn {
+    /* background-color: brown; */
+    /* display: flex;
+    justify-content: right; */
+    padding: 6px;
+    font-size: 15px;
+    color: white;
+}
+
+button{
+    background-color: #04AA6D;
+    border-radius: 4px;
+    border: none;
+    margin-top: 27px;
+    height: 35px;
+    width: 70px;
+    transition-duration: 0.4s;
+}
+button:hover{
+    background-color: rgb(96, 174, 126); /* Green */
+    /* color: black; */
+}
+
+button .add-btn{
+    /* background-color: chartreuse; */
+    text-decoration: none;
+}
+
+h1{
+    /* background-color: aqua; */
+    /* display: flex; */
+    /* justify-content: center; */
+    font-family: Georgia, serif;    
+    color: white;
+    text-transform: uppercase;
+}
+
+.form{
+    /* background-color: yellow; */
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.sub-btn{
+    /* background-color: red; */
+    /* border: 2px solid black; */
+    padding: 7px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+   
+}
+
+.img{
+    /* background-color: chocolate; */
+    /* margin: 18px;     */
+    padding-left: 100px;
+    transition: 0.5s ease-in-out;
+    height:180px;
+    width:180px;
+    margin-top: 67px;
+    display: flex;
+}
+p{
+    background-color: blue;
+    /* padding-left: 19px; */
+    /* padding-top: 204px; */
+}
+
+.img-del{
+  /* background-color: rgb(248, 10, 10); */
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto auto auto;
+  padding: 2px;
+  /* box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px; */
+}
+.urdelete{
+    background-color: #04AA6D;
+    color: white ;
+    padding-top: 10px;
+    padding-left:19px;
+    padding-right: 20px;
+    padding-bottom: 9px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: transparent;
+    width: 40px;
+    height: 25px;
+    font-size: 16px;
+    font-family: sans-serif;
+    text-transform: capitalize;
+}
+
+
+
+
+/* --------- imgadd.html -------- */
+
+
+
+h2{
+    background-color: #04AA6D;
+    display: flex;
+    justify-content: center;
+    font-family: Georgia, serif;    
+    margin: 0px;
+    padding: 40px;
+}
+
+.form{
+    margin-left: 35%;
+    margin-top:9% ;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 24px;
+    width: 25%;
+}
+

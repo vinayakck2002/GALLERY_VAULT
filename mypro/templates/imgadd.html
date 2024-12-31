@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <title>add.net</title>
+</head>
+<body>
+    <h2>Upload Images</h2>
+    <div class="form">
+        <form action="{% url 'namemain' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input  type="file" name="files" class="sub-btn">
+            <input type="submit" value="Submit" class="sub-btn">
+        </form>
+        </div>
+
+    
+</body>
+</html>
