@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from . models import Gallery
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout as authlogout
 from django.contrib.auth.models import User
 from django.contrib import messages
 # Create your views here.
@@ -43,17 +43,34 @@ def usersignup(request):
 
 # ---------------------------------------------gallery vault page--------------------------------------------------------------------------  # 
 def viewsmain(request):
+    # user=User.objects.get(user=request.session['username'])
+    # if request.method == "POST":
+    #     imgdef = request.FILES['files']  # Get the uploaded file from the request
+    #     # print(imgdef)  # You can remove this print statement after testing
+        
+    #     # Create and save a new ImgForm object with the uploaded image
+    #     obj = Gallery(classimages=imgdef,User=request.user)
+    #     obj.save()
+    #     return redirect(viewsmain)  # Redirect to the index view to refresh the page
+
+    # # Fetch all ImgForm objects to display the images
+    # imagefeeds = Gallery.objects.all()
+    # return render(request, "index3.html", {"feeds": imagefeeds})
+
+    #-------------------------------------------chatgpt--------------------------------------------------
+    if not request.user.is_authenticated:
+        return redirect('signin')  # Redirect to sign-in if not authenticated
+    
     if request.method == "POST":
         imgdef = request.FILES['files']  # Get the uploaded file from the request
-        # print(imgdef)  # You can remove this print statement after testing
         
-        # Create and save a new ImgForm object with the uploaded image
-        obj = Gallery(classimages=imgdef,User=request.user)
+        # Create and save a new Gallery object with the uploaded image
+        obj = Gallery(classimages=imgdef, User=request.user)  # Save the image for the logged-in user
         obj.save()
-        return redirect(viewsmain)  # Redirect to the index view to refresh the page
+        return redirect(viewsmain)  # Redirect to refresh the page
 
-    # Fetch all ImgForm objects to display the images
-    imagefeeds = Gallery.objects.all()
+    # Fetch only the images uploaded by the logged-in user
+    imagefeeds = Gallery.objects.filter(User=request.user)  # Filter images by the current user
     return render(request, "index3.html", {"feeds": imagefeeds})
 
 def delete(request,pk):
@@ -68,6 +85,16 @@ def picture(request,id):
     imagefeeds=Gallery.objects.get(pk=id)
     feeds = imagefeeds.classimages.url
     return render(request,'images.html',{"feeds":feeds})
+def images(request,pk):
+    img=Gallery.objects.get(pk=pk)
+
+
+
+
+
+def logout(request):
+    authlogout(request)
+    return redirect('../')
 
 
 

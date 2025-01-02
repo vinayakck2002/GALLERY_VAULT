@@ -14,7 +14,9 @@ urlpatterns = [
     path('gv',views.viewsmain,name='namemain'),
     path('delete/<pk>',views.delete,name='urdelete'),
     path('addimage',views.add,name='add'),
-    path('pic/<id>',views.picture,name='pic')
+    path('pic/<id>',views.picture,name='pic'),
+
+    path('logout',views.logout,name='logout'),
 ]
 
 # This line ensures media files are served during development

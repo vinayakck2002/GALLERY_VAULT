@@ -1,17 +1,17 @@
-body{
+ body{
     /* background-color: blue; */
     margin: 0px;
     padding: 0px;
 }
 
 nav{
-    background-color:#04AA6D;
+    /* background-color:#04AA6D;
     display: flex;
     float: left;
     height: 69px;
-    width: 100%;
+    width: 98%;
     padding: 20px;
-    padding-right: 26px;
+    padding-right: 26px; */
    
     
 }
@@ -89,13 +89,6 @@ h1{
 }
 
 
-.img-del{
-  /* background-color: rgb(248, 10, 10); */
-  display: grid;
-  gap: 2px;
-  grid-template-columns: auto auto auto auto;
-  padding: 10px;
-}
 .urdelete{
     background-color: #04AA6D;
     color: white ;
@@ -134,4 +127,4 @@ h2{
     height: 24px;
     width: 25%;
 }
-
+ 
