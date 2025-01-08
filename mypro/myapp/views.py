@@ -101,8 +101,9 @@ def logout(request):
         del request.session['username']
     if 'user_id' in request.session:
         del request.session['user_id']
+    request.session.flush()
     authlogout(request)
-    return redirect('../')
+    return redirect(viewsmain)
 
 
 
