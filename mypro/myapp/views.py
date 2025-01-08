@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 # Create your views here.
 def signin(request):
+    if request.user.is_authenticated:
+        return redirect(viewsmain)
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -19,6 +21,8 @@ def signin(request):
         
         if user is not None:
             login(request, user)
+            request.session['username'] = user.username
+            request.session['user_id'] = user.id
             return redirect(index)  # Redirect to the home page after login
         else:
             messages.error(request, "Invalid credentials")
@@ -93,6 +97,10 @@ def images(request,pk):
 
 
 def logout(request):
+    if 'username' in request.session:
+        del request.session['username']
+    if 'user_id' in request.session:
+        del request.session['user_id']
     authlogout(request)
     return redirect('../')
 
